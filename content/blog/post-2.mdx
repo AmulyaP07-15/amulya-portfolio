@@ -1,0 +1,67 @@
+---
+title: "Agentic AI: Why Recursive Language Models Are the Next Frontier"
+date: "2025-12-01"
+excerpt: "Beyond prompt-response cycles — why the future of AI systems lies in recursive, self-directed reasoning architectures."
+---
+
+## The Limits of the Turn-Based Paradigm
+
+Most deployed LLM applications follow the same pattern: user sends prompt, model generates response, repeat. This works surprisingly well — until it doesn't.
+
+The moment a task requires planning across multiple steps, validating intermediate outputs, or adapting based on new information mid-execution, the turn-based model breaks down. You need something that can *think across time*.
+
+That's the core promise of agentic AI.
+
+## What Makes an Architecture "Agentic"?
+
+An agentic system isn't just an LLM with tools. It has three distinguishing properties:
+
+1. **Persistent goal state** — the system maintains an objective across multiple reasoning steps
+2. **Self-evaluation** — it can assess whether intermediate outputs meet quality criteria and retry if not
+3. **Dynamic tool selection** — it decides *which* tool to call based on the current state, not a fixed pipeline
+
+Recursive language model architectures take this further: the model's own outputs become inputs to subsequent reasoning steps, creating feedback loops that allow for genuine self-correction.
+
+## ReguGrounded: A Case Study
+
+In building ReguGrounded, our agentic compliance system, we encountered the classic failure mode of naive RAG: **citation hallucination**. The model would confidently cite regulatory sections that didn't exist.
+
+Our solution: a recursive validation loop.
+
+```
+Query → Retrieval (Pinecone) → Draft Answer → Citation Verifier →
+  if valid: return answer
+  if invalid: re-retrieve with corrected query → repeat
+```
+
+The verifier is itself a constrained LLM call that checks whether cited regulation IDs actually appear in the retrieved chunks. If not, it rewrites the retrieval query and loops.
+
+This simple recursion dropped hallucination rates dramatically — and crucially, the system *knows when it doesn't know*, returning "insufficient regulatory coverage" rather than fabricating an answer.
+
+## Why This Matters Beyond Compliance
+
+The recursive pattern generalizes. Consider:
+
+- **Research agents** that iteratively refine literature searches
+- **Code generation systems** that run tests and fix failures autonomously
+- **Multi-hop reasoning** over knowledge graphs with self-correction
+
+The common thread: **the model is in a feedback loop with external ground truth**, whether that's a vector database, a test suite, or a live API.
+
+## The Open Problems
+
+Agentic systems introduce new failure modes:
+
+- **Infinite loops** — the agent keeps retrying without converging
+- **Goal drift** — intermediate sub-goals replace the original objective
+- **Compounding errors** — early mistakes cascade through subsequent steps
+
+Addressing these requires explicit termination conditions, state snapshotting, and — I'd argue — uncertainty quantification at each step.
+
+## Where We're Headed
+
+I believe the next generation of AI systems will be defined not by raw model capability, but by **the architecture of their reasoning loops**. A less capable model with a well-designed agentic loop will outperform a more capable model operating turn-by-turn on complex tasks.
+
+The field is moving fast. But the core insight — that intelligence emerges not from a single forward pass, but from *iterative refinement* — feels fundamental.
+
+That's what I'm building toward.

@@ -1,0 +1,58 @@
+---
+title: "What I Learned Building a Medical Image Embedding Benchmarking System"
+date: "2025-11-10"
+excerpt: "A deep dive into benchmarking feature extraction strategies for medical image classification — and what the numbers actually mean."
+---
+
+## The Problem Worth Solving
+
+When I started this project, I had one question: *which feature extraction strategy actually works best for medical images?* Not in theory — in practice, at scale, with real clinical data distributions.
+
+Medical images are unlike natural images. A chest X-ray encodes subtle density variations that carry enormous diagnostic weight. A histopathology slide at 40x magnification contains millions of cells where a 2% spatial difference can mean the difference between benign and malignant.
+
+Generic vision models trained on ImageNet don't understand this. So we need to benchmark.
+
+## What We Built
+
+We evaluated three major families of feature extractors on a standardized medical image dataset:
+
+- **CNN-based backbones** (ResNet-50, DenseNet-121) pretrained on ImageNet and CheXpert
+- **Vision Transformers (ViT)** — both vanilla and medical-domain fine-tuned
+- **BioBERT-derived multimodal models** — combining radiology reports with image patches
+
+The goal: find which strategy produces the most semantically meaningful embeddings for retrieval and classification.
+
+## Key Metrics
+
+We used three evaluation axes:
+
+1. **Precision@5** — are the 5 nearest neighbors in embedding space clinically similar?
+2. **Davies-Bouldin Index** — how well-separated are clusters in the latent space?
+3. **Linear probe accuracy** — how much information is encoded linearly?
+
+## Results That Surprised Me
+
+The biggest surprise: **domain-adapted ViTs significantly outperformed ImageNet-pretrained CNNs**, even with far fewer parameters. The ViT-B/16 fine-tuned on CheXpert embeddings showed a **58.7% improvement in Precision@5** over the ResNet-50 ImageNet baseline.
+
+Even more striking: the **Davies-Bouldin Index dropped by 78.7%** — meaning the embedding clusters were dramatically tighter and better separated. This matters for retrieval systems where you want semantically similar cases grouped together.
+
+```python
+# Simplified evaluation loop
+for model_name, extractor in extractors.items():
+    embeddings = extractor.encode(test_images)
+    p5 = precision_at_k(embeddings, labels, k=5)
+    db = davies_bouldin_score(embeddings, labels)
+    results[model_name] = {"P@5": p5, "DB": db}
+```
+
+## What I'd Do Differently
+
+1. **Self-supervised pretraining on in-domain data** — DINO or MAE on a private medical corpus would likely push results further
+2. **Contrastive learning with clinical metadata** — pairing images with structured EHR data as supervision signal
+3. **Hierarchical retrieval** — first retrieve by modality/body part, then by pathology
+
+## Takeaways
+
+Building this system taught me that benchmarking is not just about numbers — it's about understanding *why* certain representations generalize. Domain shift is real, and for high-stakes domains like medicine, generic embeddings aren't good enough.
+
+The intersection of self-supervised learning and medical AI is where I want to push next.
