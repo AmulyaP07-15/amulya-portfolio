@@ -6,8 +6,8 @@ import { useRef, useState } from 'react';
 const contactLinks = [
   {
     label: 'Email',
-    value: 'amulyappt7@gmail.com',
-    href: 'mailto:amulyappt7@gmail.com',
+    value: 'penikalapati.a@northeastern.edu',
+    href: 'mailto:penikalapati.a@northeastern.edu',
     icon: (
       <svg className="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
         <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z" />
@@ -27,8 +27,8 @@ const contactLinks = [
   },
   {
     label: 'LinkedIn',
-    value: 'linkedin.com/in/amulya-p',
-    href: 'https://linkedin.com/in/amulya-p',
+    value: 'linkedin.com/in/amulya-penikalapati',
+    href: 'https://www.linkedin.com/in/amulya-penikalapati-6174121ab/',
     icon: (
       <svg className="w-5 h-5" viewBox="0 0 24 24" fill="currentColor">
         <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 0 1-2.063-2.065 2.064 2.064 0 1 1 2.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z" />
@@ -46,7 +46,7 @@ export default function Contact() {
     setForm((prev) => ({ ...prev, [e.target.name]: e.target.value }));
   };
 
-  const mailtoHref = `mailto:amulyappt7@gmail.com?subject=Message from ${encodeURIComponent(form.name)}&body=${encodeURIComponent(
+  const mailtoHref = `mailto:penikalapati.a@northeastern.edu?subject=Message from ${encodeURIComponent(form.name)}&body=${encodeURIComponent(
     `Name: ${form.name}\nEmail: ${form.email}\n\n${form.message}`
   )}`;
 
@@ -84,7 +84,7 @@ export default function Contact() {
             className="space-y-4"
           >
             <p className="text-base leading-[1.7] text-[#8B949E]">
-              I&apos;m always open to interesting conversations — whether it&apos;s research
+              I&apos;m always open to interesting conversations, whether it&apos;s research
               collaborations, internship opportunities, or just a chat about AI. Feel free to reach out.
             </p>
 

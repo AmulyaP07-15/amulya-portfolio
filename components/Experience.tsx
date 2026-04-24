@@ -10,9 +10,9 @@ const experiences = [
     period: 'Sep 2024 – Aug 2025',
     type: 'Full-Time',
     points: [
-      'Built full-stack enterprise applications with Angular + Spring Boot serving thousands of users',
-      'Designed and implemented RESTful APIs with robust error handling and authentication',
-      'Participated in Agile sprints, code reviews, and cross-functional team collaboration',
+      'Developed microservices using Spring Boot and AWS (Lambda, RDS, S3) serving 1,000+ users with 99.9% uptime',
+      'Optimized database schemas and SQL queries, improving application performance and reducing deployment time from 4 hours to 30 minutes through CI/CD automation',
+      'Built REST APIs with authentication and error handling, collaborating with business analysts to deliver data solutions for key business requirements',
     ],
   },
   {
@@ -21,9 +21,9 @@ const experiences = [
     period: 'Aug 2023 – Oct 2023',
     type: 'Internship',
     points: [
-      'Developed ML pipelines integrating large language models for enterprise customer search systems',
-      'Built ETL pipelines to process multilingual datasets across 5+ languages',
-      'Improved search relevance metrics through embedding-based retrieval experiments',
+      'Designed and automated ETL pipelines processing 50,000+ multilingual documents across 5+ Indic languages for Project Indus LLM training data',
+      'Improved data quality scores from 68% to 94% through automated validation scripts and systematic data transformation workflows',
+      'Collaborated with cross-functional teams of linguists and engineers to build production data pipelines for large language model development',
     ],
   },
 ];

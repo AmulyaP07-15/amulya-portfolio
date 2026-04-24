@@ -14,7 +14,7 @@ const projects = [
     description:
       'Benchmarked feature extraction strategies for medical image classification. Achieved 58.7% improvement in Precision@5 and 78.7% reduction in Davies-Bouldin index over baseline CNN models.',
     tags: ['#pytorch', '#vision-transformers', '#bioBERT', '#scikit-learn'],
-    github: '#',
+    github: 'https://github.com/AmulyaP07-15/medical-embedding-visualization',
     gradient: 'linear-gradient(135deg, #1a1040, #6D5CFF)',
     terminal: [
       { text: '$ running benchmark...', color: '#8B949E' },
@@ -28,7 +28,7 @@ const projects = [
     description:
       'Deep learning pipeline processing 10,000+ clinical documents using T5 (220M params). Multi-label classification with 79.3% accuracy using BioBERT-based feature extraction.',
     tags: ['#pytorch', '#T5', '#NLP', '#classification'],
-    github: '#',
+    github: 'https://github.com/AmulyaP07-15/nbme-clinical-notes',
     gradient: 'linear-gradient(135deg, #0a2540, #00E5FF)',
     terminal: [
       { text: '$ processing 10,000 docs...', color: '#8B949E' },
@@ -42,7 +42,7 @@ const projects = [
     description:
       'Agentic AI system with recursive language model architecture for multi-jurisdictional regulatory queries. Features a citation validation loop to eliminate hallucinations.',
     tags: ['#GPT-4o', '#pinecone', '#fastAPI', '#agentic-AI'],
-    github: '#',
+    github: 'https://github.com/AmulyaP07-15/ReguGrounded',
     gradient: 'linear-gradient(135deg, #1a0a2e, #9D4EDD)',
     terminal: [
       { text: '$ querying regulations...', color: '#8B949E' },

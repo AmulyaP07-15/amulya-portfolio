@@ -45,34 +45,34 @@ export default function About() {
           <SectionReveal delay={0.1} className="md:col-span-3 space-y-6">
             {/* Tier 1 — hook */}
             <p className="font-mono text-2xl font-bold text-[#E6EDF3] leading-snug">
-              I build AI systems that learn, reason, and generalize.
+              I build production AI systems that solve real problems.
             </p>
 
             {/* Tier 2 — detail */}
             <div className="space-y-4 text-base leading-[1.8] text-[#9AA4B2]">
               <p>
-                CS graduate from India now pursuing my{' '}
+                CS graduate from India currently pursuing my{' '}
                 <span className="text-[#E6EDF3]">MS in Artificial Intelligence</span> at{' '}
-                <span className="text-[#a78bfa]">Northeastern University, Boston</span>. My academic
-                journey has been driven by a single conviction: the most interesting problems sit at
-                the boundary between disciplines.
+                <span className="text-[#a78bfa]">Northeastern University</span> in Boston. Before grad
+                school, I spent a year at{' '}
+                <span className="text-[#E6EDF3]">Capgemini</span> building full-stack applications and
+                REST APIs, and worked at{' '}
+                <span className="text-[#E6EDF3]">Tech Mahindra</span> developing ETL pipelines and ML
+                systems.
               </p>
               <p>
-                Research interests:{' '}
-                <span className="text-[#a78bfa]">computer vision</span>,{' '}
-                <span className="text-[#a78bfa]">self-supervised learning</span>, and{' '}
-                <span className="text-[#a78bfa]">representation learning</span>. I care about building
-                models that learn rich, transferable features without massive labeled datasets. Agentic
-                AI systems and long-horizon reasoning are the other thread I keep pulling on.
+                I focus on the intersection of machine learning and production engineering. I care about
+                building models that actually ship, work at scale, and solve problems outside the lab.
+                Right now, I&apos;m especially interested in{' '}
+                <span className="text-[#a78bfa]">agentic AI systems</span>,{' '}
+                <span className="text-[#a78bfa]">computer vision</span>, and building{' '}
+                <span className="text-[#a78bfa]">ML infrastructure</span> that makes models faster and
+                more efficient.
               </p>
               <p>
-                Before grad school, Software Engineer at Capgemini — shipping full-stack products and
-                REST APIs. That industry grounding shapes how I approach research. I care about systems
-                that work outside the lab.
-              </p>
-              <p>
-                Outside of research: competitive tennis for 12 years, rock and metal, and a lot of
-                literary and science fiction.
+                I&apos;ve played competitive tennis for 12 years, which taught me discipline and how to
+                perform under pressure. Outside of work, I listen to rock and metal and read way too
+                much science fiction.
               </p>
             </div>
           </SectionReveal>
